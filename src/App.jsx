@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CartPage from "./Pages/CartPage/CartPage.jsx";
   
 // import './utils/smoothScroll'
-import HomePage from "./pages/HomePage/HomePage.jsx";
+import HomePage from "./Pages/HomePage/HomePage.jsx";
 import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 
