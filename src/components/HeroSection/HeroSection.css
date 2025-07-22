@@ -1,0 +1,404 @@
+/* HeroSection.css - Carousel Aesthetic (Image Visibility Ensured) */
+
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Import Anton font for headings */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Adjust height as needed */
+  max-height: 800px; /* Max height for larger screens */
+  overflow: hidden;
+  background-color: #000; /* Fallback dark background */
+  font-family: 'Inter', sans-serif;
+  border-radius: 15px; /* Subtle rounded corners for the container */
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.2), 0 0 80px rgba(0, 255, 255, 0.1); /* Dual neon glow */
+  margin: 20px auto; /* Center the carousel */
+  max-width: 1400px; /* Align with other page content */
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 1s ease-in-out; /* Smooth fade transition */
+  /* Animation for slide entrance - applies to the whole slide container */
+  animation: slideIn 1s forwards;
+}
+
+/* Keyframe for slide entrance */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05); /* Start slightly zoomed for a dynamic entry */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
+
+/* Make the current slide visible (handled by JS, but good for initial state) */
+/* This rule might be overridden by JS, but ensures a default visible state */
+.carousel-slide:first-of-type {
+  opacity: 1;
+}
+
+
+/* Styling for the background image within the slide */
+.slide-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area */
+  z-index: 0; /* IMPORTANT: Place image at the very back */
+  filter: brightness(0.7) contrast(1.1); /* Slightly darken and increase contrast for better text readability */
+}
+
+/* Overlay for Glass Morphism effect */
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darker, more transparent overlay */
+  backdrop-filter: blur(8px); /* Glass morphism blur, slightly less intense */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  z-index: 1; /* IMPORTANT: Place overlay over the image */
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2; /* IMPORTANT: Ensure content is above overlay and image */
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  max-width: 70%; /* Slightly narrower content box to reveal more image */
+  background-color: rgba(26, 26, 26, 0.3); /* More transparent dark background for content box */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2); /* Dual glow for content box */
+  animation: contentFadeIn 1.2s ease-out; /* Content entrance animation */
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-name {
+  font-family: 'Anton', sans-serif;
+  font-size: 4em; /* Large, impactful name */
+  color: #ff00ff; /* Neon pink */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.6);
+  margin-bottom: 15px;
+  animation: textGlowPulse 2s infinite alternate; /* Pulsating text glow */
+}
+
+@keyframes textGlowPulse {
+  from { text-shadow: 0 0 10px rgba(255, 0, 255, 0.9); }
+  to { text-shadow: 0 0 20px rgba(255, 0, 255, 1.2); }
+}
+
+.slide-slogan {
+  font-size: 1.8em;
+  color: #00ffff; /* Electric blue for slogans */
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  animation: sloganSlideIn 1.5s ease-out;
+}
+
+@keyframes sloganSlideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-price {
+  font-size: 2.5em;
+  color: #ff0000; /* Fiery red for price */
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+  animation: pricePop 1.8s ease-out;
+}
+
+@keyframes pricePop {
+  0% { opacity: 0; transform: scale(0.5); }
+  80% { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.social-hashtags {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hashtag {
+  background-color: rgba(138, 43, 226, 0.6); /* Semi-transparent purple */
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: lowercase;
+  border: 1px solid rgba(160, 32, 240, 0.4);
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hashtag:hover {
+  background-color: rgba(255, 0, 255, 0.7); /* Neon pink on hover */
+  border-color: #00ffff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
+.slide-cta-button {
+  background: linear-gradient(90deg, #ff0000, #ff7b00); /* Fiery red/orange gradient */
+  color: white;
+  padding: 18px 40px;
+  border: 3px solid #ff0000;
+  border-radius: 35px;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 123, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: inline-flex; /* For icon alignment */
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.slide-cta-button:hover {
+  background: linear-gradient(90deg, #ff7b00, #ff0000); /* Reverse gradient on hover */
+  transform: scale(1.1) rotateZ(2deg); /* Aggressive scale and rotation */
+  box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 123, 0, 0.8);
+  border-color: #00ffff; /* Electric blue border on hover */
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  color: #ff00ff; /* Neon pink arrows */
+  border: 2px solid #ff00ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10; /* IMPORTANT: Ensure arrows are above content */
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+}
+
+.carousel-arrow.prev {
+  left: 20px;
+}
+
+.carousel-arrow.next {
+  right: 20px;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 255, 255, 0.6); /* Electric blue on hover */
+  color: #000;
+  border-color: #00ffff;
+  transform: translateY(-50%) scale(1.1); /* Pop and slight rotate */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8);
+}
+
+/* Navigation Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* IMPORTANT: Ensure dots are above content */
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.3); /* Muted white */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.dot.active {
+  background-color: #ff00ff; /* Neon pink for active dot */
+  border-color: #ff00ff;
+  transform: scale(1.2); /* Larger active dot */
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.5);
+}
+
+.dot:hover {
+  background-color: #00ffff; /* Electric blue on hover */
+  border-color: #00ffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .carousel-container {
+    height: 60vh;
+    margin: 15px auto;
+  }
+  .slide-name {
+    font-size: 3.2em;
+    letter-spacing: 2px;
+  }
+  .slide-slogan {
+    font-size: 1.5em;
+  }
+  .slide-price {
+    font-size: 2em;
+  }
+  .slide-cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+  }
+  .carousel-arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+  }
+  .carousel-arrow.prev { left: 15px; }
+  .carousel-arrow.next { right: 15px; }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 55vh;
+    border-radius: 10px;
+  }
+  .slide-content {
+    padding: 20px;
+    max-width: 90%;
+  }
+  .slide-name {
+    font-size: 2.5em;
+    letter-spacing: 1.5px;
+  }
+  .slide-slogan {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .slide-price {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  .hashtag {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+  .slide-cta-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3em;
+  }
+  .carousel-arrow.prev { left: 10px; }
+  .carousel-arrow.next { right: 10px; }
+  .carousel-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 50vh;
+    margin: 10px auto;
+    border-radius: 5px;
+  }
+  .slide-content {
+    padding: 15px;
+    max-width: 95%;
+  }
+  .slide-name {
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .slide-slogan {
+    font-size: 1.0em;
+    margin-bottom: 15px;
+  }
+  .slide-price {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .social-hashtags {
+    margin-bottom: 20px;
+    gap: 8px;
+  }
+  .hashtag {
+    padding: 5px 10px;
+    font-size: 0.7em;
+  }
+  .slide-cta-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1em;
+  }
+  .carousel-arrow.prev { left: 5px; }
+  .carousel-arrow.next { right: 5px; }
+  .carousel-dots {
+    bottom: 10px;
+    gap: 6px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

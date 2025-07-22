@@ -1,0 +1,189 @@
+/* CallToAction.css - Devilish & Aggressive Aesthetic */
+
+.call-to-action {
+  background-color: #0d0d0d; /* Very dark background */
+  padding: 80px 20px; /* Generous padding */
+  text-align: center;
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  border-top: 3px solid #222; /* Subtle top border */
+  border-bottom: 3px solid #222; /* Subtle bottom border */
+  box-shadow:
+    0 -10px 30px rgba(255, 0, 0, 0.1), /* Top red glow */
+    0 10px 30px rgba(0, 255, 255, 0.1); /* Bottom cyan glow */
+  position: relative;
+  overflow: hidden; /* Ensure no overflow from animations */
+}
+
+/* Pseudo-elements for background effects */
+.call-to-action::before,
+.call-to-action::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05; /* Very subtle */
+  pointer-events: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.call-to-action::before {
+  background-image: url('https://placehold.co/1920x1080/000000/FF0000?text=DEMONIC_PATTERN'); /* Replace with an actual edgy pattern if available */
+  transform: scale(1.1) rotate(5deg);
+}
+
+.call-to-action::after {
+  background-image: url('https://placehold.co/1920x1080/000000/00FFFF?text=CYBER_GLITCH'); /* Replace with another edgy pattern */
+  transform: scale(1.1) rotate(-5deg);
+}
+
+
+.call-to-action h2 {
+  font-size: 4.5em; /* Massive heading for impact */
+  color: #ff00ff; /* Neon pink for primary heading */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 4px; /* More spaced out */
+  text-shadow:
+    0 0 20px rgba(255, 0, 255, 1), /* Strong primary glow */
+    0 0 40px rgba(255, 0, 255, 0.8),
+    0 0 60px rgba(255, 0, 255, 0.5); /* Wider, softer glow */
+  animation: headingPulse 2s infinite alternate ease-in-out; /* Pulsating glow */
+  position: relative;
+  z-index: 1; /* Ensure text is above background effects */
+}
+
+@keyframes headingPulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 0, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 0, 255, 1), 0 0 60px rgba(255, 0, 255, 1);
+  }
+}
+
+.call-to-action p {
+  font-size: 1.5em; /* Larger description */
+  color: #b0b0b0; /* Slightly muted for readability */
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* Center and space below */
+  line-height: 1.6;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Subtle cyan glow */
+  position: relative;
+  z-index: 1;
+}
+
+.call-to-action button {
+  /* Aggressive, interactive button */
+  background: linear-gradient(90deg, #ff0000, #ff4500); /* Fiery red/orange gradient */
+  color: white;
+  padding: 20px 50px; /* Large button for prominence */
+  border: 4px solid #ff0000; /* Thicker, matching border */
+  border-radius: 50px; /* Very rounded, almost pill-shaped */
+  cursor: pointer;
+  font-size: 1.8em; /* Large, commanding text */
+  font-weight: 900; /* Extra bold */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.8), /* Strong initial glow */
+    0 0 50px rgba(255, 69, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1); /* Very fast, impactful transition */
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* For inner glow effect */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Strong text shadow */
+}
+
+.call-to-action button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5); /* Intense white glow */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+
+.call-to-action button:hover {
+  background: linear-gradient(90deg, #ff4500, #ff0000); /* Reverse gradient on hover */
+  transform: scale(1.1) rotateZ(3deg); /* Aggressive scale and slight rotation */
+  box-shadow:
+    0 0 50px rgba(255, 0, 0, 1), /* Bursting red glow */
+    0 0 100px rgba(255, 69, 0, 0.8),
+    0 0 150px rgba(255, 0, 0, 0.5);
+  border-color: #00ffff; /* Electric blue border on hover */
+  animation: buttonBurst 0.5s ease-out; /* Quick burst animation */
+}
+
+@keyframes buttonBurst {
+  0% { transform: scale(1) rotateZ(0deg); }
+  50% { transform: scale(1.15) rotateZ(-5deg); }
+  100% { transform: scale(1.1) rotateZ(3deg); }
+}
+
+.call-to-action button:hover::before {
+  width: 250%; /* Massive glow */
+  height: 250%;
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .call-to-action h2 {
+    font-size: 3.5em;
+    letter-spacing: 3px;
+  }
+  .call-to-action p {
+    font-size: 1.3em;
+  }
+  .call-to-action button {
+    padding: 18px 40px;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .call-to-action {
+    padding: 60px 15px;
+  }
+  .call-to-action h2 {
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .call-to-action p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+  .call-to-action button {
+    padding: 15px 30px;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-to-action {
+    padding: 40px 10px;
+  }
+  .call-to-action h2 {
+    font-size: 2.2em;
+    letter-spacing: 1.5px;
+  }
+  .call-to-action p {
+    font-size: 0.95em;
+    margin-bottom: 25px;
+  }
+  .call-to-action button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+}

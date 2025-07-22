@@ -1,0 +1,160 @@
+/* App.css - Global Devilish Aesthetic */
+
+/* Import Google Fonts for 'Inter', 'Anton', 'Protest Strike', and 'Winky Rough' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Anton&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough&display=swap');
+
+
+/* Basic Reset & Box Sizing */
+html {
+  box-sizing: border-box;
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* From provided snippet */
+  font-weight: 400; /* From provided snippet */
+  color-scheme: dark; /* Explicitly set to dark for consistency */
+  font-synthesis: none; /* From provided snippet */
+  text-rendering: optimizeLegibility; /* From provided snippet */
+  -webkit-font-smoothing: antialiased; /* From provided snippet */
+  -moz-osx-font-smoothing: grayscale; /* From provided snippet */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body and Global Typography */
+body {
+  font-family: 'Inter', sans-serif; /* Primary font for the body */
+  color: #e0e0e0; /* Light grey for general text */
+  background-color: #050505; /* Extremely dark background for the entire app */
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  display: flex;
+  flex-direction: column; /* For sticky footer/header if needed */
+  overflow-x: hidden; /* Prevent horizontal scroll from animations/effects */
+  min-width: 320px; /* From provided snippet */
+  place-items: center; /* From provided snippet - useful if body is a flex container for a single main child */
+}
+
+/* Main Content Area */
+main {
+  flex-grow: 1; /* Allows main content to take up available space */
+  display: flex;
+  flex-direction: column;
+  /* Add a subtle background texture or pattern if desired, or keep it solid dark */
+  /* background-image: url('path/to/subtle-dark-texture.png'); */
+  /* background-repeat: repeat; */
+  /* background-size: 100px; */
+}
+
+/* Global Link Styles */
+a {
+  font-weight: 500; /* From provided snippet */
+  color: #00ffff; /* Electric blue for general links, consistent with theme */
+  text-decoration: inherit; /* From provided snippet */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #ff00ff; /* Neon pink on hover, consistent with theme */
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+/* Global Heading 1 Styles */
+h1 {
+  font-size: 3.2em; /* From provided snippet */
+  line-height: 1.1; /* From provided snippet */
+  font-family: 'Anton', sans-serif; /* Use Anton for general H1s */
+  color: #ff00ff; /* Neon pink for H1s, consistent with theme */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8); /* Glow effect */
+}
+
+/* Global Button Styles */
+button {
+  border-radius: 8px; /* From provided snippet */
+  border: 1px solid transparent; /* From provided snippet */
+  padding: 0.6em 1.2em; /* From provided snippet */
+  font-size: 1em; /* From provided snippet */
+  font-weight: 500; /* From provided snippet */
+  font-family: 'Inter', sans-serif; /* Use Inter for general buttons */
+  background-color: #1a1a1a; /* Dark background, consistent with theme */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smoother transition for all properties */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  color: #e0e0e0; /* Light text color */
+}
+
+button:hover {
+  border-color: #ff00ff; /* Neon pink border on hover, consistent with theme */
+  opacity: 1; /* Ensure full opacity on hover */
+  box-shadow: 0 4px 10px rgba(255, 0, 255, 0.4); /* Stronger shadow on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto #00ffff; /* Electric blue outline on focus, consistent with theme */
+  border-color: #00ffff; /* Electric blue border on focus */
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none; /* No transform when disabled */
+  box-shadow: none; /* No shadow when disabled */
+}
+
+/* Scrollbar Styling (Webkit - Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #0d0d0d; /* Dark background for scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff00ff; /* Neon pink for scrollbar thumb */
+  border-radius: 6px;
+  border: 2px solid #0d0d0d; /* Border to separate thumb from track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00ffff; /* Electric blue on hover */
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Slick Carousel Overrides (if needed, based on the aesthetic) */
+.slick-prev:before,
+.slick-next:before {
+  color: #ff00ff !important; /* Neon pink for arrows */
+  font-size: 30px !important;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.slick-dots li button:before {
+  color: #00ffff !important; /* Electric blue for dots */
+  font-size: 15px !important;
+  opacity: 0.5 !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff00ff !important; /* Neon pink for active dot */
+  opacity: 1 !important;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 1);
+}
+
+/* Specific Font Classes (from provided snippet) */
+.anton{
+  font-family: 'Anton', sans-serif;
+}
+.strikes{
+  font-family: 'Protest Strike', sans-serif;
+}
+.winky{
+  font-family: 'Winky Rough', sans-serif;
+}

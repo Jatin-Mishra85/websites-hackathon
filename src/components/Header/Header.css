@@ -1,0 +1,535 @@
+/* Header.css - Refined Devilish & Glass Morphism Aesthetic */
+
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Import Anton font for the logo */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.main-header {
+  background-color: rgba(13, 13, 13, 0.9); /* Slightly transparent dark background for subtle glass effect */
+  padding: 20px 30px;
+  border-bottom: 3px solid #1a1a1a;
+  /* Enhanced shadow for a deeper, more ominous glow */
+  box-shadow:
+    0 5px 25px rgba(0, 255, 255, 0.15), /* Cyan glow */
+    0 10px 40px rgba(255, 0, 255, 0.1); /* Magenta glow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Add glass morphism effect to the header itself (subtle) */
+  backdrop-filter: blur(8px); /* Blur content behind it */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  border-radius: 10px; /* Minimum 10px border-radius */
+  margin: 10px auto; /* Add margin for the rounded corners to be visible */
+  max-width: calc(100% - 20px); /* Adjust max-width to account for margin */
+}
+
+.header-top-bar {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling - JML on top, full name below */
+.header-logo {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: flex-start; /* Align text to the left within the logo container */
+  gap: 0px; /* Adjust gap to control vertical spacing */
+}
+
+.header-logo .anton {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.8em;
+  text-decoration: none;
+  color: #ff00ff; /* Neon pink for JML */
+  text-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.5); /* Stronger glow */
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 1; /* Adjust line height to reduce space */
+}
+
+.header-logo .anton span {
+  color: #00ffff; /* Electric blue for 'M' */
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+.header-logo .anton:hover {
+  transform: scale(1.05) rotateX(5deg); /* Subtle 3D tilt on hover */
+  text-shadow: 0 0 25px rgba(255, 0, 255, 1), 0 0 50px rgba(0, 255, 255, 0.9);
+}
+
+.header-logo .FForm { /* Full form logo for desktop */
+  font-family: 'Anton', sans-serif;
+  font-size: 0.8em; /* Slightly smaller than JML */
+  text-decoration: none;
+  color: #e0e0e0; /* Muted white for main text */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  line-height: 1.2; /* Adjust line height */
+}
+
+.header-logo .FForm span {
+  color: #ff0000; /* Fiery red for 'Monsters' */
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+.header-logo .FForm:hover {
+  transform: translateY(-2px); /* Slight vertical shift */
+  text-shadow: 0 0 18px rgba(255, 0, 0, 1), 0 0 35px rgba(0, 255, 255, 0.6);
+}
+
+/* Main Navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px; /* Increased space between nav items */
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 1.15em; /* Slightly larger font */
+  font-weight: 700; /* Bolder */
+  text-transform: uppercase;
+  letter-spacing: 0.8px; /* More spaced out */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncy transition */
+  position: relative;
+  padding-bottom: 7px; /* More space for underline effect */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px; /* Thicker underline */
+  background: linear-gradient(90deg, #ff00ff, #00ffff); /* Neon gradient underline */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.main-nav ul li a:hover {
+  color: #ff00ff; /* Neon pink on hover */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.6);
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+.main-nav ul li a.active {
+  color: #00ffff; /* Electric blue for active link */
+  text-shadow: 0 0 18px rgba(0, 255, 255, 1), 0 0 35px rgba(255, 0, 255, 0.8);
+}
+
+.main-nav ul li a.active::after {
+  width: 100%;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  animation: activeGlow 1.5s infinite alternate; /* Pulsating active glow */
+}
+
+@keyframes activeGlow {
+  from { box-shadow: 0 0 8px rgba(0, 255, 255, 0.6); }
+  to { box-shadow: 0 0 15px rgba(0, 255, 255, 1); }
+}
+
+/* Header Icons - Perfectly aligned and aggressively interactive */
+.header-icons {
+  display: flex;
+  gap: 25px; /* More space between icons for clarity */
+  align-items: center; /* Ensure vertical alignment */
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #ff0000; /* Fiery red for icons */
+  font-size: 1.6em; /* Larger icons for prominence */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Aggressive spring-like animation */
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Strong initial glow */
+  position: relative;
+  padding: 5px; /* Add padding for larger clickable area */
+  display: flex; /* For proper icon centering */
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-button:hover {
+  color: #00ffff; /* Electric blue on hover */
+  transform: scale(1.3) rotate(15deg); /* More aggressive scale and rotation */
+  text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8);
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px; /* Adjusted position */
+  right: -10px; /* Adjusted position */
+  background-color: #ff00ff; /* Neon pink badge */
+  color: white;
+  border-radius: 50%;
+  padding: 0px 2px; 
+  /* Larger padding for visibility */
+  font-size: 0.75em; /* Slightly larger font */
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.9); /* Stronger badge glow */
+  animation: pulseBadge 1.5s infinite alternate; /* Pulsating badge */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
+}
+
+@keyframes pulseBadge {
+  from { transform: scale(1); opacity: 0.8; }
+  to { transform: scale(1.15); opacity: 1; } /* More pronounced pulse */
+}
+
+/* Menu Toggle Button (for mobile) */
+.menu-toggle-button {
+  display: none; /* Hidden by default on desktop */
+  background: none;
+  border: none;
+  color: #ff00ff; /* Neon pink for menu icon */
+  font-size: 2em; /* Larger icon */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 12px rgba(255, 0, 255, 0.8);
+  padding: 5px; /* For larger clickable area */
+}
+
+.menu-toggle-button:hover {
+  transform: rotate(90deg) scale(1.15); /* More aggressive rotate on hover */
+  text-shadow: 0 0 25px rgba(255, 0, 255, 1);
+}
+
+/* Search Overlay - Glass morphism effect */
+.search-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0); /* Darker, slightly more opaque */
+  backdrop-filter: blur(15px); /* Stronger blur for glass effect */
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  animation: fadeInOverlay 0.3s ease-out;
+  padding: 20px;
+  border-radius: 0; /* Full screen, so no radius needed */
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.search-input {
+  width: 80%; /* Wider input */
+  max-width: 500px;
+  padding: 10px; /* Larger padding */
+  font-size: 2em; /* Very large input field */
+  background-color: rgba(26, 26, 26, 0.5); /* Slightly transparent dark background */
+  color: #00ffff; /* Electric blue text */
+  border: 3px solid #4b0082; /* Deep purple border */
+  border-radius: 12px; /* More rounded input */
+  outline: none;
+  margin-top: 20px;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.6); /* Stronger glow */
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-input:focus {
+  border-color: #ff00ff; /* Neon pink on focus */
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.9);
+}
+
+.close-search-button {
+  position: absolute;
+  top: 40px; /* Adjusted position */
+  right: 40px; /* Adjusted position */
+  background: none;
+  border: none;
+  color: #ff0000; /* Fiery red 'X' */
+  font-size: 2.8em; /* Even larger 'X' */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+}
+
+.close-search-button:hover {
+  transform: rotate(180deg) scale(1.15); /* More dramatic rotation */
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+.trending-searches {
+  margin-top: 50px; /* More space */
+  font-size: 1.3em; /* Larger font */
+  color: #b0b0b0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px; /* More space */
+}
+
+.trending-searches span {
+  font-weight: bold;
+  color: #ff00ff; /* Neon pink for "Trending:" */
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+.trending-searches a {
+  color: #00ffff; /* Electric blue for trending links */
+  text-decoration: none;
+  padding: 5px 10px; /* Larger padding */
+  border: 2px solid #4b0082; /* Thicker border */
+  border-radius: 25px; /* More rounded */
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  background-color: rgba(26, 0, 42, 0.7); /* Dark semi-transparent background */
+}
+
+.trending-searches a:hover {
+  background: linear-gradient(90deg, #2a004a, #4b0082); /* Dark purple gradient on hover */
+  border-color: #ff00ff; /* Neon pink border */
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+  transform: translateY(-3px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+}
+
+/* Mobile Navigation Overlay - Glass morphism effect */
+.mobile-nav-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95); /* Even more opaque dark overlay */
+  backdrop-filter: blur(20px); /* Even stronger blur for glass effect */
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  animation: fadeInOverlay 0.3s ease-out;
+  padding: 20px;
+  position: relative;
+  border-radius: 0; /* Full screen */
+}
+
+.mobile-nav-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 90%; /* Wider mobile menu */
+  max-width: 500px;
+}
+
+.mobile-nav-overlay ul li {
+  margin-bottom: 25px; /* More space between mobile links */
+}
+
+.mobile-nav-overlay ul li a {
+  color: #ff00ff; /* Neon pink for mobile links */
+  text-decoration: none;
+  font-size: 2.2em; /* Very large mobile links */
+  font-weight: 800; /* Extra bold */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 12px rgba(255, 0, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: block;
+  padding: 12px 0;
+}
+
+.mobile-nav-overlay ul li a:hover {
+  color: #00ffff; /* Electric blue on hover */
+  text-shadow: 0 0 25px rgba(0, 255, 255, 1);
+  transform: translateX(15px) scale(1.02); /* More aggressive slide and slight scale */
+}
+
+.mobile-nav-overlay ul li a.active {
+  color: #ff0000; /* Fiery red for active mobile link */
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1), 0 0 50px rgba(255, 69, 0, 0.8);
+  animation: activeLinkPulse 1s infinite alternate; /* Pulsating active link */
+}
+
+@keyframes activeLinkPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.03); }
+}
+
+.mobile-nav-category {
+  color: #b0b0b0;
+  font-size: 1.3em; /* Larger category headings */
+  font-weight: bold;
+  margin-top: 40px; /* More space */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* Thicker separator */
+  padding-bottom: 8px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.close-menu-button {
+  position: absolute;
+  top: 40px; /* Adjusted position */
+  right: 90px; /* Adjusted position */
+  background: none;
+  border: none;
+  color: #ff0000; /* Fiery red 'X' */
+  font-size: 2.8em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+}
+
+.close-menu-button:hover {
+  transform: rotate(-180deg) scale(1.15); /* More dramatic rotation */
+  text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .main-header {
+    padding: 15px 20px; /* Reduced padding */
+    margin: 0; /* Remove side margins for full width on smaller screens */
+    border-radius: 0; /* No radius on smaller screens for full width */
+  }
+  .header-logo .FForm {
+    font-size: 1.1em; /* Adjust font size */
+  }
+  .main-nav {
+    display: none; /* Hide main nav */
+  }
+  .header-icons {
+    gap: 20px;
+  }
+  .icon-button {
+    font-size: 1.4em;
+  }
+  .menu-toggle-button {
+    display: block; /* Show menu toggle button */
+  }
+  .search-input {
+    font-size: 1.8em;
+    padding: 18px;
+  }
+  .trending-searches {
+    font-size: 1.1em;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 15px;
+  }
+  .header-logo .anton {
+    font-size: 2.2em;
+  }
+  .header-logo .FForm {
+    display: none; /* Hide full form logo on small screens */
+  }
+  .header-icons {
+    gap: 15px;
+  }
+  .icon-button {
+    font-size: 1.3em;
+  }
+  .cart-count {
+    padding: 4px 7px;
+    font-size: 0.65em;
+    top: -8px;
+    right: -8px;
+  }
+  .menu-toggle-button {
+    font-size: 1.8em;
+  }
+  .search-input {
+    font-size: 1.5em;
+    padding: 15px;
+  }
+  .trending-searches {
+    font-size: 1em;
+    gap: 10px;
+  }
+  .mobile-nav-overlay ul li {
+    margin-bottom: 20px;
+  }
+  .mobile-nav-overlay ul li a {
+    font-size: 1.8em;
+  }
+  .close-search-button, .close-menu-button {
+    font-size: 2.2em;
+    top: 25px;
+    right: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 8px 10px;
+  }
+  .header-logo .anton {
+    font-size: 1.8em;
+    letter-spacing: 0;
+  }
+  .header-icons {
+    gap: 10px;
+  }
+  .icon-button {
+    font-size: 1.1em;
+  }
+  .cart-count {
+    padding: 3px 6px;
+    font-size: 0.6em;
+    top: -5px;
+    right: -5px;
+  }
+  .menu-toggle-button {
+    font-size: 1.5em;
+  }
+  .search-input {
+    font-size: 1.2em;
+    padding: 12px;
+  }
+  .trending-searches {
+    font-size: 0.9em;
+    gap: 8px;
+  }
+  .mobile-nav-overlay ul li {
+    margin-bottom: 15px;
+  }
+  .mobile-nav-overlay ul li a {
+    font-size: 1.4em;
+    letter-spacing: 0.5px;
+    padding: 8px 0;
+  }
+  .mobile-nav-category {
+    font-size: 1.1em;
+  }
+  .close-search-button, .close-menu-button {
+    font-size: 1.8em;
+    top: 15px;
+    right: 15px;
+  }
+}

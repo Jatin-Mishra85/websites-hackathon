@@ -1,0 +1,116 @@
+/* App.css - Global Devilish Aesthetic */
+
+/* Import Google Fonts for 'Inter' and 'Anton' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Anton&display=swap');
+
+/* Basic Reset & Box Sizing */
+html {
+  box-sizing: border-box;
+  font-size: 16px; /* Base font size */
+}
+::selection{
+  background-color: red;
+  color: black;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body and Global Typography */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #e0e0e0; /* Light grey for general text */
+  background-color: #050505; /* Extremely dark background for the entire app */
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  display: flex;
+  flex-direction: column; /* For sticky footer/header if needed */
+  overflow-x: hidden; /* Prevent horizontal scroll from animations/effects */
+}
+
+/* Main Content Area */
+main {
+  flex-grow: 1; /* Allows main content to take up available space */
+  display: flex;
+  flex-direction: column;
+  /* Add a subtle background texture or pattern if desired, or keep it solid dark */
+  /* background-image: url('path/to/subtle-dark-texture.png'); */
+  /* background-repeat: repeat; */
+  /* background-size: 100px; */
+}
+
+/* Global Link Styles (for non-component specific links) */
+a {
+  color: #00ffff; /* Electric blue for general links */
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #ff00ff; /* Neon pink on hover */
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+/* Global Button Styles (for general buttons not specifically styled by components) */
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Scrollbar Styling (Webkit - Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0px;
+  background-color: #0d0d0d; /* Dark background for scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff00ff; /* Neon pink for scrollbar thumb */
+  border-radius: 6px;
+  border: 2px solid #0d0d0d; /* Border to separate thumb from track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00ffff; /* Electric blue on hover */
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Slick Carousel Overrides (if needed, based on the aesthetic) */
+/* These are general suggestions, adjust as per your specific needs */
+.slick-prev:before,
+.slick-next:before {
+  color: #ff00ff !important; /* Neon pink for arrows */
+  font-size: 30px !important;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.slick-dots li button:before {
+  color: #00ffff !important; /* Electric blue for dots */
+  font-size: 15px !important;
+  opacity: 0.5 !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff00ff !important; /* Neon pink for active dot */
+  opacity: 1 !important;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 1);
+}

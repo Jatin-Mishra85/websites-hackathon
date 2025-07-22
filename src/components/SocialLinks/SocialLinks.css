@@ -1,0 +1,132 @@
+/* SocialLinks.css - Devilish & Aggressive Aesthetic (Revised) */
+
+/* Import Font Awesome for icons (if used within links) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 50px auto; /* Center the list and add vertical margin */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Reduced space between links for a tighter look */
+  background-color: rgba(10, 10, 10, 0.7); /* Even darker, more opaque background for the container */
+  border-radius: 8px; /* Sharper corners for the container */
+  /* Intense, multi-layered glow for the container */
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.2), /* Red glow */
+    0 0 30px rgba(0, 255, 255, 0.1), /* Cyan glow */
+    0 0 50px rgba(255, 0, 255, 0.05); /* Magenta glow */
+  padding: 20px; /* Reduced padding for the container */
+  max-width: 1000px; /* Slightly narrower max-width */
+  font-family: 'Inter', sans-serif;
+  /* Glass morphism for the container */
+  backdrop-filter: blur(10px); /* Stronger blur */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Slightly more visible border */
+}
+
+.social-links a {
+  /* Base Link/Button Styling - Designed as glowing, sharp shards */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* Significantly reduced padding for smaller size */
+  text-decoration: none;
+  font-size: 1em; /* Smaller font size */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px; /* Slightly tighter letter spacing */
+  border-radius: 5px; /* Sharper corners for the button */
+  position: relative;
+  overflow: hidden;
+
+  /* Color Scheme: Fiery Red, Electric Blue, Neon Pink, Deep Purple */
+  background-color: rgba(26, 0, 42, 0.7); /* Deep purple with transparency */
+  color: #ff00ff; /* Neon pink text */
+  border: 2px solid rgba(138, 43, 226, 0.4); /* Muted purple border */
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.4); /* Neon pink glow */
+
+  /* Glass Morphism for individual links */
+  backdrop-filter: blur(12px); /* Stronger blur for individual links */
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Aggressive, snappy transition for all effects */
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Faster, more aggressive spring */
+  will-change: transform, box-shadow, background-color, border-color, color;
+}
+
+/* Pseudo-element for inner glow/flash effect on hover */
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 255, 255, 0.7); /* Electric Cyan flash */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease; /* Faster flash */
+  z-index: 0; /* Behind text */
+}
+
+/* Hover Effects - Intense, electric, and aggressive */
+.social-links a:hover {
+  color: #00ffff; /* Electric blue text on hover */
+  background: linear-gradient(45deg, #ff0000, #ff4500); /* Fiery red/orange gradient on hover */
+  border-color: #00ffff; /* Electric blue border */
+  transform: translateY(-3px) scale(1.08) rotateZ(5deg); /* More aggressive lift, scale, and rotation */
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.9), /* Intense red glow */
+    0 0 40px rgba(0, 255, 255, 0.6); /* Secondary cyan glow */
+}
+
+.social-links a:hover::before {
+  width: 250%; /* Larger flash */
+  height: 250%;
+  opacity: 1;
+}
+
+/* Icon specific styling */
+.social-links a i {
+  margin-right: 6px; /* Reduced space between icon and text */
+  font-size: 1.1em; /* Slightly larger icon than text */
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover i {
+  color: #fff; /* White icon on fiery background */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .social-links {
+    gap: 10px;
+    padding: 15px;
+    margin: 25px auto;
+  }
+  .social-links a {
+    padding: 8px 18px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    gap: 8px;
+    padding: 10px;
+    margin: 15px auto;
+  }
+  .social-links a {
+    padding: 7px 15px;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+  }
+  .social-links a i {
+    font-size: 1em;
+    margin-right: 4px;
+  }
+}

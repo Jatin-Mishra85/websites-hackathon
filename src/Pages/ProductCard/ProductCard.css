@@ -1,0 +1,291 @@
+/* ProductCard.css - Devilish & Aggressive Aesthetic */
+
+.product-card {
+  /* Base Card Styles - Dark, angular, and ready to unleash */
+  border-radius: 8px; /* Sharper corners for a more aggressive look */
+  background-color: #0c0c0c; /* Ultra-deep, almost black background */
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 35px; /* More space at the bottom for impact */
+  position: relative;
+  /* Multi-layered initial shadow with a sinister, pulsating glow */
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.3), /* Red base glow */
+    0 0 20px rgba(0, 255, 255, 0.1), /* Cyan secondary glow */
+    0 0 40px rgba(255, 0, 255, 0.05); /* Magenta tertiary glow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px; /* Even wider base width for presence */
+  min-height: 450px; /* Taller base height */
+
+  /* Extreme 3D and Transition for an immersive, menacing feel */
+  transform-style: preserve-3d; /* Enables 3D transformations for children */
+  perspective: 1200px; /* Deeper 3D perspective */
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1); /* Very fast, impactful transition */
+  will-change: transform, box-shadow, border-color; /* Optimize performance */
+  text-decoration: none; /* Remove underline from Link */
+  color: inherit; /* Inherit text color */
+  border: 3px solid #222; /* Thicker, dark border */
+  animation: subtlePulse 3s infinite ease-in-out; /* Subtle, slow pulse for base card */
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3), 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 255, 255, 0.2);
+  }
+}
+
+/* Pseudo-elements for aggressive, jagged, and intense glow effects */
+.product-card::before,
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: -8px; /* Extend further beyond border */
+  left: -8px;
+  width: calc(100% + 16px); /* Extend further beyond border */
+  height: calc(100% + 16px);
+  border-radius: 12px; /* Slightly larger radius than card for glow */
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+  z-index: 0; /* Behind the card content */
+  pointer-events: none; /* Ensure clicks pass through */
+}
+
+.product-card::before {
+  background: linear-gradient(45deg, #ff0000, #ff4500); /* Intense fiery red/orange */
+  transform: scale(0.85); /* Start smaller for more dramatic expansion */
+  filter: blur(15px); /* Even stronger blur for intense glow */
+}
+
+.product-card::after {
+  background: linear-gradient(135deg, #00ffff, #007bff); /* Electric blue/deep blue */
+  transform: scale(0.85);
+  filter: blur(15px);
+}
+
+/* Aggressive Hover Effects for the Card - Snapping, twisting, and bursting with energy */
+.product-card:hover {
+  transform: translateY(-30px) rotateX(12deg) rotateY(-12deg) scale(1.08); /* More dramatic lift, twist, and scale */
+  border-color: #ff00ff; /* Neon pink border on hover */
+  /* Multi-layered, intense, and pulsating shadow on hover */
+  box-shadow:
+    0 0 50px rgba(255, 0, 0, 0.9), /* Dominant red glow */
+    0 0 100px rgba(0, 255, 255, 0.6), /* Strong cyan glow */
+    0 0 150px rgba(255, 0, 255, 0.3); /* Wider magenta glow */
+  z-index: 10; /* Bring hovered card to front */
+  animation: none; /* Stop subtle pulse on hover */
+}
+
+.product-card:hover::before {
+  opacity: 0.8; /* Intense warm glow on hover */
+  transform: scale(1);
+  animation: glowFlicker 0.3s infinite alternate; /* Rapid flicker for inner glow */
+}
+
+.product-card:hover::after {
+  opacity: 0.8; /* Intense cool glow on hover */
+  transform: scale(1);
+  animation: glowFlicker 0.3s infinite alternate reverse; /* Reversed flicker for dual effect */
+}
+
+@keyframes glowFlicker {
+  0%, 100% { opacity: 0.8; filter: blur(15px); }
+  50% { opacity: 0.95; filter: blur(20px); }
+}
+
+/* Image Styles - Desaturated, then vibrant and glitchy on hover */
+.product-card img {
+  width: calc(100% - 40px); /* More space from edges for border/glow */
+  aspect-ratio: 10/12;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Deeper image shadow */
+  filter: grayscale(80%) brightness(50%); /* Very desaturated and dark initially */
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), filter 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  z-index: 20; /* Ensure image is above pseudo-elements */
+  margin-top: 20px; /* More space from top */
+  border: 2px solid #333; /* Thicker image border */
+}
+
+/* Image becomes vibrant and slightly rotates/glitches on card hover */
+.product-card:hover img {
+  transform: scale(0.95) rotateZ(5deg); /* More aggressive zoom out and rotation */
+  filter: saturate(250%) brightness(150%); /* Ultra vibrant and brighter */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  animation: imgDistort 0.4s ease-in-out; /* Quick, aggressive image distortion */
+}
+
+@keyframes imgDistort {
+  0% { transform: scale(1) rotateZ(0deg); }
+  25% { transform: scale(1.02) rotateZ(-2deg); }
+  50% { transform: scale(0.98) rotateZ(2deg); }
+  75% { transform: scale(1.01) rotateZ(-1deg); }
+  100% { transform: scale(0.95) rotateZ(5deg); }
+}
+
+
+/* Content Styles (Name, Price, CTA) - Aggressive, glowing text */
+.product-card h3 {
+  margin: 25px 15px 12px; /* More generous margins */
+  font-weight: 900; /* Max bold for impact */
+  color: #ff00ff; /* Neon pink for name */
+  font-size: 1.8em; /* Larger, more dominant heading */
+  text-transform: uppercase;
+  letter-spacing: 3px; /* More spaced out letters */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.6); /* Intense glow */
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 50;
+  animation: textShake 0.8s infinite alternate; /* Subtle, menacing text shake */
+}
+
+@keyframes textShake {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-1px) translateY(1px); }
+  75% { transform: translateX(1px) translateY(-1px); }
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #00ffff; /* Electric blue for price */
+  font-size: 1.6em; /* Larger price font */
+  margin-bottom: 25px; /* Space before button */
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.5); /* Price glow */
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 50;
+}
+
+/* "Winky" class for subtle text animation (now a quick, sharp thrust) */
+.winky {
+  display: inline-block;
+}
+
+.product-card:hover .winky {
+  animation: winkyThrust 0.2s ease-out; /* Quick, sharp thrust on card hover */
+}
+
+@keyframes winkyThrust {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Call to Action Button - The ultimate action button, bursting with power */
+.product-card-cta {
+  background: linear-gradient(90deg, #8a2be2, #4b0082); /* Deep purple gradient */
+  color: white;
+  padding: 16px 35px; /* Even larger, more prominent button */
+  border: 3px solid #a020f0; /* Thicker, neon purple border */
+  border-radius: 40px; /* More rounded button */
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 800; /* Extra bold */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.7), 0 0 40px rgba(138, 43, 226, 0.4); /* Intense initial glow */
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 50;
+  overflow: hidden;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Stronger text shadow for button */
+}
+
+.product-card-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4); /* White glow */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+.product-card-cta:hover {
+  background: linear-gradient(90deg, #4b0082, #8a2be2); /* Reverse gradient on hover */
+  transform: scale(1.1); /* More pronounced scale */
+  /* Stronger, pulsating glow on hover */
+  box-shadow: 0 0 40px rgba(138, 43, 226, 0.9), 0 0 80px rgba(138, 43, 226, 0.6);
+  animation: buttonPulse 0.6s infinite alternate; /* Aggressive button pulse */
+}
+
+@keyframes buttonPulse {
+  0%, 100% { transform: scale(1.1); box-shadow: 0 0 40px rgba(138, 43, 226, 0.9), 0 0 80px rgba(138, 43, 226, 0.6); }
+  50% { transform: scale(1.12); box-shadow: 0 0 50px rgba(138, 43, 226, 1), 0 0 100px rgba(138, 43, 226, 0.8); }
+}
+
+
+.product-card-cta:hover::before {
+  width: 200%; /* Even larger glow */
+  height: 200%;
+  opacity: 1;
+}
+
+/* Responsive adjustments for ProductCard */
+@media (max-width: 1024px) {
+  .product-card {
+    min-width: 280px;
+    min-height: 420px;
+  }
+  .product-card h3 {
+    font-size: 1.6em;
+    letter-spacing: 2px;
+  }
+  .product-card p {
+    font-size: 1.4em;
+  }
+  .product-card-cta {
+    padding: 14px 30px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    min-width: 250px;
+    min-height: 380px;
+  }
+  .product-card h3 {
+    font-size: 1.4em;
+    letter-spacing: 1.5px;
+  }
+  .product-card p {
+    font-size: 1.2em;
+  }
+  .product-card-cta {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    min-width: unset; /* Allow card to take full width */
+    width: 90%; /* Occupy most of the screen width */
+    margin: 0 auto; /* Center individual cards in a single column layout */
+    min-height: 350px;
+    padding-bottom: 25px;
+  }
+  .product-card h3 {
+    font-size: 1.3em;
+    letter-spacing: 1px;
+  }
+  .product-card p {
+    font-size: 1.1em;
+  }
+  .product-card-cta {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}

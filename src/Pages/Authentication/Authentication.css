@@ -1,0 +1,309 @@
+/* SignupPage.css - Devilish & Aggressive Aesthetic */
+
+/* Import Font Awesome for spinner */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Global font for consistency */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* More dynamic and vibrant background gradient - now darker, more sinister */
+  background: linear-gradient(135deg, #0a000a, #00050a, #0a0005); /* Very dark, almost black with subtle red/blue hints */
+  position: relative;
+  overflow: hidden; /* Prevent overflow from background effects */
+}
+
+/* Background abstract shapes/glows for dynamic, almost liquid feel */
+.auth-page::before,
+.auth-page::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4; /* Slightly more visible */
+  filter: blur(100px); /* More intense blur for a softer glow */
+  animation: backgroundGlow 15s infinite alternate ease-in-out; /* Slower, more fluid animation */
+  z-index: 0; /* Ensure they are behind everything */
+}
+
+.auth-page::before {
+  background: radial-gradient(circle, #8a0000, transparent); /* Deep, blood-red glow */
+  width: 700px;
+  height: 700px;
+  top: -150px;
+  left: -150px;
+}
+
+.auth-page::after {
+  background: radial-gradient(circle, #008080, transparent); /* Darker teal/cyan glow */
+  width: 800px;
+  height: 800px;
+  bottom: -200px;
+  right: -200px;
+  animation-delay: 3s; /* Staggered animation */
+}
+
+@keyframes backgroundGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(100px, -80px) scale(1.1); }
+  66% { transform: translate(-100px, 80px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+
+.auth-container {
+  background-color: rgba(25, 0, 0, 0.15); /* Darker, slightly red-tinted transparent base for glass */
+  border-radius: 25px; /* Even more rounded corners for a modern, soft edge */
+  padding: 50px; /* More generous padding */
+  /* Multi-layered, vibrant box-shadow for a glowing, floating effect - now more aggressive */
+  box-shadow:
+    0 10px 40px rgba(255, 0, 0, 0.4), /* Red glow */
+    0 20px 60px rgba(0, 128, 128, 0.3), /* Teal/Cyan glow */
+    0 0 80px rgba(255, 0, 255, 0.2); /* Magenta subtle glow */
+  backdrop-filter: blur(15px); /* Stronger glass morphism blur */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtler border */
+  text-align: center;
+  max-width: 500px; /* Wider container */
+  width: 90%;
+  animation: fadeInScale 0.8s ease-out; /* Slower entrance animation for impact */
+  z-index: 1; /* Ensure container is above background glows */
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Start smaller */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.auth-title {
+  font-size: 3.2em; /* Larger, more impactful title */
+  color: #ff0000; /* Fiery Red for title */
+  margin-bottom: 40px; /* More space below title */
+  text-transform: uppercase;
+  letter-spacing: 3px; /* More spaced out letters */
+  /* Intense, pulsating text shadow */
+  text-shadow:
+    0 0 20px rgba(255, 0, 0, 1),
+    0 0 40px rgba(0, 128, 128, 0.8),
+    0 0 60px rgba(255, 0, 255, 0.5);
+  animation: titleGlowPulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes titleGlowPulse {
+  0%, 100% { text-shadow: 0 0 15px rgba(255, 0, 0, 1), 0 0 30px rgba(0, 128, 128, 0.8); }
+  50% { text-shadow: 0 0 25px rgba(255, 0, 0, 1.2), 0 0 50px rgba(0, 128, 128, 1); }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* More space between form groups */
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px; /* More space below label */
+  font-size: 1.2em; /* Larger label font */
+  color: #c0c0c0; /* Slightly darker light grey for labels */
+  font-weight: 600; /* Bolder labels */
+  text-shadow: 0 0 5px rgba(0, 128, 128, 0.2); /* Subtle teal glow for labels */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 18px 22px; /* Larger padding for inputs */
+  border: 2px solid rgba(255, 0, 0, 0.4); /* Red border */
+  border-radius: 15px; /* More rounded input fields */
+  background-color: rgba(0, 0, 0, 0.2); /* Darker transparent background */
+  color: #f8f8f8; /* Brighter text color for input */
+  font-size: 1.1em; /* Larger input font */
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4); /* Deeper inner shadow */
+}
+
+.form-group input::placeholder {
+  color: #808080; /* Darker placeholder color */
+}
+
+.form-group input:focus {
+  border-color: #00ffff; /* Electric blue border on focus */
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.8), /* Stronger outer glow on focus */
+    inset 0 0 10px rgba(0, 255, 255, 0.5); /* Stronger inner glow on focus */
+  background-color: rgba(0, 0, 0, 0.3); /* Even more opaque on focus */
+}
+
+.auth-button {
+  width: 100%;
+  padding: 18px; /* Larger padding */
+  border: none;
+  border-radius: 15px; /* More rounded button */
+  background: linear-gradient(45deg, #ff0000, #a00000); /* Fiery red to dark red gradient */
+  color: white;
+  font-size: 1.3em; /* Larger font */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* More spaced out */
+  cursor: pointer;
+  /* Multi-layered, vibrant box-shadow for initial state */
+  box-shadow:
+    0 5px 25px rgba(255, 0, 0, 0.5),
+    0 10px 30px rgba(0, 128, 128, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncy transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* More space for spinner */
+  margin-top: 15px; /* More space above button */
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Text glow */
+}
+
+.auth-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4); /* More visible white flash effect */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+.auth-button:hover:not(:disabled) {
+  background: linear-gradient(45deg, #a00000, #ff0000); /* Dynamic gradient on hover (dark red to fiery red) */
+  transform: translateY(-5px) scale(1.03); /* More pronounced lift and scale */
+  /* Stronger, more vibrant box-shadow on hover */
+  box-shadow:
+    0 8px 30px rgba(255, 0, 0, 0.8),
+    0 15px 45px rgba(0, 128, 128, 0.7),
+    0 0 60px rgba(255, 0, 255, 0.5);
+}
+
+.auth-button:hover::before {
+  width: 200%; /* Larger flash */
+  height: 200%;
+  opacity: 1;
+}
+
+.auth-button:disabled {
+  background: #333; /* Darker disabled state */
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  border-top: 4px solid #ff0000; /* Fiery red spinner */
+  border-radius: 50%;
+  width: 22px; /* Slightly larger spinner */
+  height: 22px;
+  animation: spin 0.8s linear infinite; /* Faster spin */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.auth-switch-text {
+  margin-top: 30px; /* More space above switch text */
+  font-size: 1.1em; /* Larger font */
+  color: #b0b0b0;
+}
+
+.auth-switch-text a {
+  color: #ff00ff; /* Neon pink for switch link */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.6); /* Stronger glow */
+}
+
+.auth-switch-text a:hover {
+  color: #00ffff; /* Electric blue on hover */
+  text-shadow: 0 0 20px rgba(0, 255, 255, 1); /* Intense glow on hover */
+  transform: translateY(-2px); /* Subtle lift */
+  display: inline-block; /* Required for transform */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 35px;
+    border-radius: 18px;
+  }
+  .auth-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  .form-group label {
+    font-size: 1.1em;
+  }
+  .form-group input {
+    padding: 15px 18px;
+    font-size: 1em;
+  }
+  .auth-button {
+    padding: 16px;
+    font-size: 1.2em;
+  }
+  .auth-switch-text {
+    font-size: 1em;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 25px;
+    width: 95%;
+    border-radius: 15px;
+  }
+  .auth-title {
+    font-size: 2em;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+  }
+  .form-group label {
+    font-size: 1em;
+  }
+  .form-group input {
+    padding: 12px 15px;
+    font-size: 0.95em;
+  }
+  .auth-button {
+    padding: 14px;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+  }
+  .auth-switch-text {
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+}

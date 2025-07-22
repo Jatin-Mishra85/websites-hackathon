@@ -1,0 +1,479 @@
+/* AboutPage.css - Devil Level Aesthetic */
+
+.about-page {
+  background-color: #000000; /* Absolute black background for ultimate darkness */
+  color: #c0c0c0; /* Muted grey for general text, stark contrast */
+  font-family: 'Inter', sans-serif;
+  padding: 60px 20px; /* Generous padding */
+  max-width: 1500px; /* Slightly wider max-width for grander feel */
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.about-title {
+  font-family: 'Anton', sans-serif; /* Use Anton for main title */
+  font-size: 5em; /* Massive, impactful title */
+  color: #ff0000; /* Fiery, blood-red for main title */
+  text-align: center;
+  margin-bottom: 80px; /* More space below title */
+  text-transform: uppercase;
+  letter-spacing: 6px; /* More spaced out for menacing feel */
+  /* Multi-layered, intense glow for the title */
+  text-shadow:
+    0 0 25px rgba(255, 0, 0, 1),
+    0 0 50px rgba(255, 69, 0, 0.8),
+    0 0 100px rgba(255, 0, 255, 0.5); /* Adds a sinister magenta hint */
+  animation: devilTitleGlow 2.5s ease-in-out infinite alternate; /* Pulsating, sinister glow */
+}
+
+@keyframes devilTitleGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 69, 0, 0.8), 0 0 80px rgba(255, 0, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 0, 0, 1.2), 0 0 60px rgba(255, 69, 0, 1), 0 0 120px rgba(255, 0, 255, 0.6);
+  }
+}
+
+.about-section {
+  background-color: rgba(10, 0, 0, 0.3); /* Very dark, slightly red-tinted transparent background */
+  border-radius: 10px; /* Sharper corners for sections */
+  padding: 60px; /* More generous padding within sections */
+  margin-bottom: 60px; /* More space between sections */
+  /* Intense, multi-layered shadow for sections */
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.2),
+    0 0 40px rgba(0, 255, 255, 0.1),
+    0 0 80px rgba(255, 0, 255, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.2); /* Subtle red border */
+  backdrop-filter: blur(10px); /* Stronger glass morphism effect */
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden; /* Ensure internal elements don't break glass effect */
+}
+
+.section-heading {
+  font-family: 'Anton', sans-serif; /* Use Anton for section headings */
+  font-size: 3.5em; /* Prominent section headings */
+  color: #00ffff; /* Electric blue for section headings */
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 18px rgba(0, 255, 255, 0.9), 0 0 35px rgba(0, 255, 255, 0.6); /* Intense glowing effect */
+}
+
+/* Founder Bio Section */
+.founder-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder-content {
+  display: flex;
+  flex-direction: column; /* Stack image and text for mobile */
+  align-items: center;
+  gap: 40px; /* More space between image and text */
+}
+
+.founder-image {
+  width: 250px; /* Reverted to slightly smaller size */
+  height: 250px; /* Reverted to slightly smaller size */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover;
+  border: 5px solid #ff00ff; /* Reverted to slightly thinner neon pink border */
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.8), 0 0 50px rgba(255, 0, 255, 0.5); /* Slightly less intense initial glow */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+  /* IMPORTANT: Removed filter properties to keep image colors natural */
+}
+
+.founder-image:hover {
+  transform: scale(1.05) rotate(5deg); /* Less aggressive zoom and rotate on hover */
+  box-shadow: 0 0 40px rgba(255, 0, 255, 1), 0 0 80px rgba(0, 255, 255, 0.7); /* Stronger but not extreme dual glow */
+  border-color: #00ffff; /* Change border color to electric blue on hover */
+  /* IMPORTANT: Removed filter properties to keep image colors natural on hover */
+}
+
+.founder-description {
+  font-size: 1.2em; /* Larger font for description */
+  line-height: 1.8;
+  color: #b0b0b0;
+  max-width: 900px; /* Wider text block */
+  text-align: center;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+.founder-description strong {
+  color: #ff4500; /* Orange-red for emphasized text */
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+}
+
+/* Vision & Philosophy Section */
+.vision-content p {
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #c0c0c0;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.1);
+}
+
+.vision-content p:last-child {
+  margin-bottom: 0;
+}
+
+.vision-content strong {
+  color: #ff00ff; /* Neon pink for emphasized vision text */
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.7);
+}
+
+
+/* Milestones & Achievements Section */
+.timeline {
+  position: relative;
+  max-width: 1000px; /* Wider timeline */
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 6px; /* Thicker timeline line */
+  background: linear-gradient(to bottom, #ff0000, #4b0082, #00ffff); /* Red to purple to cyan gradient */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px; /* More space between items */
+  position: relative;
+}
+
+.timeline-date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px; /* Position further above the content */
+  background: linear-gradient(45deg, #ff00ff, #8a2be2); /* Neon pink to purple gradient */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px; /* More rounded date chips */
+  font-weight: bold;
+  font-size: 1em;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timeline-date:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 1.2), 0 0 50px rgba(0, 255, 255, 0.8);
+  background: linear-gradient(45deg, #00ffff, #ff00ff); /* Reverse gradient on hover */
+}
+
+.timeline-content {
+  background-color: rgba(15, 0, 0, 0.4); /* Darker, slightly red-tinted transparent background */
+  border-radius: 12px; /* Slightly more rounded */
+  padding: 35px; /* More padding */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3); /* Cyan border */
+  max-width: 45%;
+  text-align: left;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncy transition */
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 55%; /* Push content to left */
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 55%; /* Push content to right */
+}
+
+.timeline-content h3 {
+  color: #ff4500; /* Orange-red for timeline headings */
+  font-size: 1.8em; /* Larger heading */
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-content p {
+  font-size: 1.1em; /* Larger paragraph text */
+  color: #c0c0c0;
+  line-height: 1.7;
+}
+
+.timeline-content strong {
+  color: #00ffff; /* Electric blue for emphasized text */
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px) scale(1.03) rotateZ(-1deg); /* More aggressive lift, scale, and slight rotation */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(255, 0, 255, 0.5);
+  border-color: #ff00ff; /* Neon pink border on hover */
+}
+
+/* Community & Impact Section */
+.community-content p {
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #c0c0c0;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(255, 0, 0, 0.1);
+}
+
+.community-content p:last-child {
+  margin-bottom: 0;
+}
+
+.community-content strong {
+  color: #ff0000; /* Fiery red for emphasized community text */
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+
+/* Testimonials Section */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width */
+  gap: 40px; /* More space between cards */
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: rgba(15, 0, 0, 0.5); /* Darker, more red-tinted transparent background */
+  border-radius: 12px; /* Slightly more rounded */
+  padding: 35px; /* More padding */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 0, 0.3); /* Red border */
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Aggressive spring-like animation */
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card p {
+  font-size: 1.15em; /* Larger font for quotes */
+  line-height: 1.8;
+  color: #b0b0b0;
+  margin-bottom: 20px; /* More space below quote */
+  font-style: italic;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-card .testimonial-author {
+  font-weight: bold;
+  color: #00ffff; /* Electric blue for author */
+  font-size: 1.05em; /* Slightly larger author font */
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px) scale(1.05) rotateZ(2deg); /* More aggressive lift, scale, and rotation */
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.8), 0 0 70px rgba(0, 255, 255, 0.5);
+  border-color: #00ffff; /* Electric blue border on hover */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 769px) {
+  .founder-content {
+    flex-direction: row; /* Side-by-side for desktop */
+    text-align: left;
+  }
+  .founder-description {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-title {
+    font-size: 4.5em;
+  }
+  .about-section {
+    padding: 50px;
+  }
+  .section-heading {
+    font-size: 3em;
+  }
+  .founder-image {
+    width: 250px;
+    height: 250px;
+  }
+  .founder-description, .vision-content p, .community-content p {
+    font-size: 1.1em;
+  }
+  .timeline-content {
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-title {
+    font-size: 3.8em;
+    letter-spacing: 3px;
+  }
+  .about-section {
+    padding: 40px;
+    margin-bottom: 35px;
+  }
+  .section-heading {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  .founder-image {
+    width: 220px;
+    height: 220px;
+  }
+  .founder-description, .vision-content p, .community-content p {
+    font-size: 1.05em;
+  }
+  .timeline-content {
+    max-width: 48%; /* Keep for side-by-side */
+    padding: 30px;
+  }
+  .timeline-content h3 {
+    font-size: 1.6em;
+  }
+  .timeline-content p {
+    font-size: 1em;
+  }
+  .testimonials-grid {
+    gap: 30px;
+  }
+  .testimonial-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 30px 15px;
+  }
+  .about-title {
+    font-size: 3em;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+  }
+  .about-section {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  .section-heading {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+  }
+  .founder-image {
+    width: 200px;
+    height: 200px;
+  }
+  .founder-description, .vision-content p, .community-content p {
+    font-size: 1em;
+    text-align: center; /* Center text when stacked */
+  }
+  .founder-content {
+    flex-direction: column; /* Stack image and text */
+  }
+  /* Timeline adjustments for mobile */
+  .timeline::before {
+    left: 20px; /* Move timeline line to the left */
+    transform: translateX(0);
+  }
+  .timeline-item {
+    flex-direction: column; /* Stack timeline items */
+    align-items: flex-start; /* Align content to the left */
+  }
+  .timeline-date {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-left: 20px; /* Indent date to align with line */
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+  .timeline-content {
+    max-width: 100%; /* Full width for content */
+    margin: 0; /* Remove margins */
+    padding: 25px;
+    margin-left: 35px; /* Indent content to align with timeline line */
+  }
+  .timeline-content h3 {
+    font-size: 1.5em;
+  }
+  .timeline-content p {
+    font-size: 0.95em;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Single column for testimonials */
+    gap: 25px;
+  }
+  .testimonial-card {
+    padding: 25px;
+  }
+  .testimonial-card p {
+    font-size: 1.0em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 20px 10px;
+  }
+  .about-title {
+    font-size: 2.5em;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+  }
+  .about-section {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+  .section-heading {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .founder-image {
+    width: 160px;
+    height: 160px;
+  }
+  .founder-description, .vision-content p, .community-content p {
+    font-size: 0.9em;
+  }
+  .timeline-date {
+    font-size: 0.85em;
+    padding: 6px 12px;
+  }
+  .timeline-content h3 {
+    font-size: 1.2em;
+  }
+  .timeline-content p {
+    font-size: 0.85em;
+  }
+  .testimonial-card p {
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,380 @@
+/* ProductDetailPage.css */
+
+/* Base styles for the entire page - Dark, industrial, and impactful */
+.product-detail-page {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile */
+  align-items: center;
+  max-width: 1400px; /* Wider layout to match ProductsPage */
+  margin: 40px auto;
+  padding: 30px; /* Increased padding */
+  background-color: #1a1a1a; /* Deep, dark background */
+  border-radius: 15px; /* Slightly more rounded, but still sharp */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(255, 0, 255, 0.2); /* Dual neon glow */
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  animation: pageFadeIn 0.8s ease-out; /* Page entrance animation */
+  border: 1px solid #333; /* Subtle dark border */
+}
+
+/* Keyframe for page entrance animation */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading message styling - Pulsating, electric feel */
+.loading-message {
+  text-align: center;
+  padding: 80px; /* More prominent loading area */
+  font-size: 2em; /* Larger font */
+  color: #00ffff; /* Electric blue */
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  animation: loadingPulse 1.5s infinite alternate; /* Intense pulse for loading */
+}
+
+@keyframes loadingPulse {
+  from {
+    opacity: 0.7;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+  }
+}
+
+/* Product Image Section - Desaturated, then vibrant and aggressive on hover */
+.product-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px; /* More padding around image */
+  min-width: 320px;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Deeper initial shadow */
+  filter: grayscale(60%) brightness(70%); /* Darker, desaturated initial state */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.05) rotateZ(1deg); /* Aggressive zoom and slight rotation */
+  filter: saturate(180%) brightness(120%); /* Highly vibrant and brighter */
+  box-shadow: 0 0 40px rgba(255, 0, 255, 0.6), 0 0 80px rgba(0, 255, 255, 0.4); /* Intense dual glow on hover */
+}
+
+/* Product Info Section - Sharp, high-contrast text */
+.product-info {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased space between elements */
+  align-items: flex-start;
+  color: #e0e0e0; /* Light text for contrast */
+}
+
+.product-info h2 {
+  font-size: 3.5em; /* Larger, more dominant heading */
+  color: #ff00ff; /* Neon pink for heading */
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+  text-transform: uppercase; /* All caps for attitude */
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.7); /* Matching glow */
+}
+
+.product-info .price {
+  font-size: 2.2em; /* More prominent price */
+  color: #00ffff; /* Electric blue for price */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6); /* Price glow */
+}
+
+.product-info .description {
+  font-size: 1.1em;
+  color: #b0b0b0; /* Slightly muted for readability */
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Sizes Section - Edgy buttons with intense feedback */
+.sizes p {
+  font-size: 1.2em;
+  color: #e0e0e0;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Increased gap */
+  margin-bottom: 25px;
+}
+
+.size-button {
+  padding: 12px 25px;
+  border: 2px solid #8a2be2; /* Neon purple border */
+  border-radius: 30px;
+  background-color: #2a004a; /* Dark purple */
+  color: #e0e0e0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-width: 70px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
+}
+
+.size-button:hover {
+  background: linear-gradient(90deg, #4b0082, #8a2be2); /* Deep purple gradient */
+  border-color: #ff00ff; /* Neon pink border */
+  transform: translateY(-3px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+}
+
+.size-button.selected {
+  background: linear-gradient(90deg, #ff0000, #ff7b00); /* Fiery red/orange for active */
+  color: #fff;
+  border-color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  transform: scale(1.08) rotateZ(-2deg); /* More aggressive scale and tilt */
+  animation: selectedPop 0.3s ease-out; /* Quick, sharp pop animation */
+}
+
+@keyframes selectedPop {
+  0% { transform: scale(0.9) rotateZ(0deg); opacity: 0.7; }
+  50% { transform: scale(1.1) rotateZ(-3deg); opacity: 1; }
+  100% { transform: scale(1.08) rotateZ(-2deg); }
+}
+
+/* Quantity Section - Sharp, functional controls */
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.quantity p {
+  font-size: 1.2em;
+  color: #e0e0e0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.quantity button {
+  background-color: #2a004a; /* Dark purple */
+  border: 2px solid #8a2be2; /* Neon purple border */
+  border-radius: 50%;
+  width: 45px; /* Larger buttons */
+  height: 45px;
+  font-size: 1.5em; /* Larger font for +/- */
+  font-weight: bold;
+  color: #00ffff; /* Electric blue text */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.quantity button:hover {
+  background: linear-gradient(45deg, #00ffff, #00aaff); /* Electric blue gradient */
+  border-color: #ff00ff; /* Neon pink border */
+  transform: scale(1.15) rotateZ(5deg); /* Aggressive pop and rotation */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+.quantity span {
+  font-size: 1.8em; /* Very prominent quantity display */
+  font-weight: bold;
+  color: #ff00ff; /* Neon pink */
+  min-width: 40px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+/* Add to Cart Button - The ultimate action button */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 18px 30px; /* Even larger padding */
+  border: none;
+  border-radius: 35px; /* More rounded */
+  font-size: 1.4em; /* Larger, more commanding text */
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff0000, #ff7b00); /* Fiery red/orange gradient */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 123, 0, 0.5); /* Intense initial glow */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.add-to-cart-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #ff7b00, #ff0000); /* Reverse gradient on hover */
+  transform: translateY(-7px) scale(1.03); /* Aggressive lift and scale */
+  box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 123, 0, 0.8); /* More intense glow */
+}
+
+.add-to-cart-btn:disabled {
+  background: #444; /* Darker disabled state */
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+  filter: grayscale(80%); /* Desaturate when disabled */
+}
+
+/* Loading spinner for Add to Cart button - Electric and fast */
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #00ffff; /* Electric blue spinner */
+  border-radius: 50%;
+  width: 24px; /* Slightly larger spinner */
+  height: 24px;
+  animation: spin 0.8s linear infinite; /* Faster spin */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Size warning message - Flashing and urgent */
+.size-warning {
+  color: #ff0000; /* Bright red for warning */
+  font-size: 1em;
+  margin-top: 15px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+  animation: warningFlicker 0.6s infinite alternate; /* Rapid flicker */
+}
+
+@keyframes warningFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .product-detail-page {
+    flex-direction: row; /* Side-by-side for larger screens */
+    align-items: flex-start;
+    gap: 60px; /* More space between image and info */
+  }
+
+  .product-image,
+  .product-info {
+    flex: 1;
+  }
+
+  .product-info h2 {
+    font-size: 4em; /* Even larger heading on desktop */
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-detail-page {
+    max-width: 1000px;
+  }
+  .product-info h2 {
+    font-size: 3em;
+  }
+  .product-info .price {
+    font-size: 2em;
+  }
+  .add-to-cart-btn {
+    font-size: 1.2em;
+    padding: 15px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-page {
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .product-info h2 {
+    font-size: 2.8em;
+  }
+  .product-info .price {
+    font-size: 1.8em;
+  }
+  .sizes p, .quantity p {
+    font-size: 1.1em;
+  }
+  .size-button {
+    padding: 10px 20px;
+    font-size: 0.95em;
+  }
+  .quantity button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3em;
+  }
+  .quantity span {
+    font-size: 1.5em;
+  }
+  .add-to-cart-btn {
+    font-size: 1.1em;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-page {
+    padding: 15px;
+  }
+  .product-info h2 {
+    font-size: 2.2em;
+    letter-spacing: 1px;
+  }
+  .product-info .price {
+    font-size: 1.6em;
+  }
+  .sizes p, .quantity p {
+    font-size: 1em;
+  }
+  .size-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+  .quantity button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+  }
+  .quantity span {
+    font-size: 1.3em;
+  }
+  .add-to-cart-btn {
+    font-size: 1em;
+    padding: 10px 18px;
+  }
+}

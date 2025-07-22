@@ -1,0 +1,174 @@
+/* ProductsPage.css */
+
+.products-page {
+  padding: 40px 20px; /* Increased padding for more breathing room */
+  max-width: 1400px; /* Wider layout */
+  margin: 0 auto;
+  background-color: #0f0f0f; /* Very dark background */
+  color: #e0e0e0; /* Light text for contrast */
+  font-family: 'Inter', sans-serif; /* Consistent font */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.products-page h1 {
+  text-align: center;
+  margin-bottom: 50px; /* More space below heading */
+  color: #00ffff; /* Electric blue for heading */
+  font-size: 3.5em; /* Larger, more impactful heading */
+  text-transform: uppercase; /* All caps for attitude */
+  letter-spacing: 3px; /* Spaced out letters */
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.4); /* Intense glow */
+  animation: neonGlow 1.5s ease-in-out infinite alternate; /* Pulsating neon effect */
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.6);
+  }
+}
+
+.product-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Increased gap between buttons */
+  margin-bottom: 60px; /* More space below filters */
+}
+
+.product-filters button {
+  padding: 12px 25px; /* Larger buttons */
+  border: 2px solid #a020f0; /* Neon purple border */
+  border-radius: 30px; /* More rounded */
+  background-color: #2a004a; /* Dark purple background */
+  color: #e0e0e0; /* Light text */
+  font-size: 1.1em; /* Larger font */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncy transition */
+  min-width: 120px; /* Consistent minimum width */
+  text-transform: uppercase; /* All caps */
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 10px rgba(160, 32, 240, 0.3); /* Subtle initial glow */
+  position: relative;
+  overflow: hidden; /* For inner glow effect */
+}
+
+.product-filters button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.15); /* White glow */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+
+.product-filters button:hover {
+  background: linear-gradient(90deg, #4b0082, #8a2be2); /* Deep purple gradient on hover */
+  color: #fff;
+  border-color: #ff00ff; /* Neon pink border on hover */
+  transform: translateY(-5px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.6), 0 0 40px rgba(160, 32, 240, 0.4); /* Stronger glow */
+}
+
+.product-filters button:hover::before {
+  width: 180%;
+  height: 180%;
+  opacity: 1;
+}
+
+.product-filters button.active {
+  background: linear-gradient(90deg, #ff0000, #ff7b00); /* Fiery red/orange for active */
+  color: #fff;
+  border-color: #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 123, 0, 0.6);
+  transform: scale(1.05); /* More pronounced scale for active */
+  animation: activePulse 1s infinite alternate; /* Pulsating active state */
+}
+
+@keyframes activePulse {
+  from {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 123, 0, 0.6);
+  }
+  to {
+    transform: scale(1.07);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 123, 0, 0.8);
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly larger min-width for cards */
+  gap: 40px; /* Increased gap between cards */
+  justify-items: center;
+  padding: 20px 0; /* Vertical padding for the grid */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .products-page h1 {
+    font-size: 3em;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-page {
+    padding: 30px 15px;
+  }
+  .products-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  .product-filters {
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  .product-filters button {
+    padding: 10px 20px;
+    font-size: 1em;
+    min-width: 100px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-page {
+    padding: 20px 10px;
+  }
+  .products-page h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+  .product-filters {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: stretch; /* Stretch buttons to full width */
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  .product-filters button {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95em;
+  }
+  .product-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px;
+  }
+}

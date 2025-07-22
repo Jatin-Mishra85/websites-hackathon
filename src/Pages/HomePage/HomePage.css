@@ -1,0 +1,74 @@
+/* HomePage.css - Devilish & Aggressive Aesthetic */
+
+.home-page {
+  background-color: #050505; /* Extremely dark background for the entire page */
+  color: #e0e0e0; /* Light text for contrast */
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.home-section {
+  padding: 80px 20px; /* Generous padding for sections */
+  max-width: 1400px; /* Max width to align content */
+  margin: 0 auto; /* Center sections */
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Ensure content within section doesn't overflow */
+}
+
+.home-section:nth-child(even) { /* Alternate background for sections */
+  background-color: #0a0a0a; /* Slightly lighter dark for contrast */
+}
+
+.section-heading {
+  font-size: 3.8em; /* Large, impactful headings */
+  color: #ff00ff; /* Neon pink for primary headings */
+  margin-bottom: 60px; /* More space below heading */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 18px rgba(255, 0, 255, 0.8), 0 0 35px rgba(255, 0, 255, 0.5); /* Intense glow */
+  animation: pulseGlow 2s ease-in-out infinite alternate; /* Pulsating glow */
+}
+
+@keyframes pulseGlow {
+  from {
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.5);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(255, 0, 255, 1), 0 0 50px rgba(255, 0, 255, 0.7);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .home-section {
+    padding: 60px 20px;
+  }
+  .section-heading {
+    font-size: 3em;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    padding: 40px 15px;
+  }
+  .section-heading {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    padding: 30px 10px;
+  }
+  .section-heading {
+    font-size: 2em;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+}

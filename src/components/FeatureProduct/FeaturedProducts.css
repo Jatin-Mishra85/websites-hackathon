@@ -1,0 +1,191 @@
+/* FeaturedProducts.css */
+
+.featured-products {
+  padding: 60px 20px; /* Generous padding for the section */
+  background-color: #0d0d0d; /* Even darker background for featured section */
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  overflow: hidden; /* Ensure no overflow from animations */
+}
+/* Grid for featured product cards */
+.featured-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid */
+  gap: 50px; /* Increased gap for impact */
+  justify-items: center;
+  max-width: 1400px; /* Align with other pages */
+  margin: 0 auto;
+}
+
+.Feature-product-card {
+  /* Base Card Styles - Dark, angular, and ready to pop */
+  border-radius: 10px; /* Slightly less rounded for a sharper look */
+  background-color: #1a1a1a; /* Consistent dark background */
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 30px; /* More space at the bottom */
+  position: relative;
+  border: 2px solid #333; /* Solid dark border */
+  box-shadow: 0 0 10px rgba(1, 247, 247, 0.1), 0 0 20px rgba(255, 0, 255, 0.05); /* Subtle initial glow */
+
+  /* 3D and Transition for aggressive interaction */
+  transform-style: preserve-3d;
+  perspective: 1200px; /* Deeper perspective */
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Aggressive spring-like animation */
+  /* will-change: transform, box-shadow, border-color;  */
+}
+
+/* Pseudo-elements for intense, angular glow effects */
+.Feature-product-card::before,
+.Feature-product-card::after {
+  content: '';
+  position: absolute;
+  top: -5px; /* Extend beyond border */
+  left: -5px;
+  width: calc(100% + 10px); /* Extend beyond border */
+  height: calc(100% + 10px);
+  border-radius: 15px; /* Slightly larger radius than card for glow */
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+  z-index: 0; /* Behind the card content */
+}
+
+.Feature-product-card::before {
+  background: linear-gradient(45deg, #ff0000, #ff7b00); /* Fiery red/orange */
+  transform: scale(0.9);
+  filter: blur(10px); /* Stronger blur for intense glow */
+}
+
+.Feature-product-card::after {
+  background: linear-gradient(135deg, #00ffff, #00aaff); /* Electric blue/cyan */
+  transform: scale(0.9);
+  filter: blur(10px); /* Stronger blur for intense glow */
+}
+
+/* Aggressive Hover Effects for the Card */
+.Feature-product-card:hover {
+  transform: translateY(-20px) rotateX(8deg) rotateY(-8deg) scale(1.05); /* More dramatic lift, tilt, and scale */
+  border-color: #ff00ff; /* Neon pink border on hover */
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.7), 0 0 80px rgba(255, 0, 255, 0.5); /* Intense, pulsating dual glow */
+  z-index: 10; /* Bring hovered card to front */
+}
+
+.Feature-product-card:hover::before {
+  opacity: 0.6; /* Stronger glow on hover */
+  transform: scale(1);
+}
+
+.Feature-product-card:hover::after {
+  opacity: 0.6; /* Stronger glow on hover */
+  transform: scale(1);
+}
+
+/* Image Styles - Desaturated, then vibrant on hover */
+.Feature-product-card img {
+  width: calc(100% - 30px); /* More space from edges */
+  aspect-ratio: 10/12;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  filter: grayscale(70%) brightness(60%); /* Very desaturated and dark initially */
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), filter 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  z-index: 1; /* Above pseudo-elements, below text */
+  margin-top: 15px; /* Space from top */
+  border: 1px solid #222; /* Subtle image border */
+}
+
+/* Image becomes vibrant and slightly rotates on card hover */
+.Feature-product-card:hover img {
+  transform: scale(0.98) rotateZ(2deg); /* Slight zoom out and rotation */
+  filter: saturate(200%) brightness(130%); /* Ultra vibrant and brighter */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* Removed animation: imageGlitch */
+}
+
+/* Content Styles (Name, Price) - Aggressive, glowing text */
+.Feature-product-card h3 {
+  margin: 20px 15px 10px; /* More generous margins */
+  font-weight: 900; /* Max bold for impact */
+  color: #ff00ff; /* Neon pink for name */
+  font-size: 1.6em; /* Larger, more dominant heading */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(255, 0, 255, 0.8); /* Intense glow */
+  transition: transform 0.3s ease;
+  position: relative;
+  -webkit-text-stroke: 1px #000000;
+  z-index: 2; /* Above image */
+}
+
+.Feature-product-card p {
+  font-weight: bold;
+  color: #00ffff; /* Electric blue for price */
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Price glow */
+  transition: transform 0.3s ease;
+  position: relative;
+  
+  z-index: 2; /* Above image */
+}
+
+/* Hover effects for text - subtle shift */
+.Feature-product-card:hover h3,
+.Feature-product-card:hover p {
+  transform: translateY(-2px); /* Slight lift */
+  /* Removed animation: textFlicker */
+}
+
+
+/* Responsive adjustments for FeaturedProductCard */
+@media (max-width: 1024px) {
+  .featured-products {
+    gap: 40px;
+  }
+  .Feature-product-card {
+    min-width: 250px;
+  }
+  .Feature-product-card h3 {
+    font-size: 1.4em;
+  }
+  .Feature-product-card p {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-products {
+    padding: 40px 15px;
+    gap: 30px;
+  }
+  .Feature-product-card {
+    min-width: 220px;
+  }
+  .Feature-product-card h3 {
+    font-size: 1.3em;
+  }
+  .Feature-product-card p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products {
+    padding: 30px 10px;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 25px;
+  }
+  .Feature-product-card {
+    min-width: unset; /* Allow card to take full width */
+    width: 90%; /* Occupy most of the screen width */
+    margin: 0 auto;
+  }
+  .Feature-product-card h3 {
+    font-size: 1.2em;
+  }
+  .Feature-product-card p {
+    font-size: 1em;
+  }
+}
