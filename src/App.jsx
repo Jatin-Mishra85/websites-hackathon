@@ -4,18 +4,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // In your src/index.js or App.js
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CartPage from "./Pages/CartPage/CartPage";
+import CartPage from "./Pages/CartPage/CartPage.jsx";
   
 // import './utils/smoothScroll'
-import HomePage from "./pages/HomePage/HomePage";
-import ProductsPage from "./pages/ProductsPage/ProductsPage";
-import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 
-import LoginPage from "./Pages/Authentication/LoginPage";
-import SignupPage from "./Pages/Authentication/SignupPage";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import LoginPage from "./Pages/Authentication/LoginPage.jsx";
+import SignupPage from "./Pages/Authentication/SignupPage.jsx";
+import AboutPage from "./pages/AboutPage/AboutPage.jsx";
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import "./App.css"; // Ensure App.css is imported for global styles or App component specific styles
 
 function App() {
