@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { allProducts } from '../../Data/ProductsData';
+import { allProducts } from '../../Data/ProductsData.js';
 import './ProductDetailPage.css';
 
 function ProductDetailPage({ addToCart }) {

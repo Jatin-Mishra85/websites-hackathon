@@ -1,7 +1,7 @@
 // src/pages/ProductsPage.jsx
 import React, { useState } from "react";
-import ProductCard from "../ProductCard/ProductCard"; // Corrected import path
-import { allProducts } from "../../Data/ProductsData"; // Import centralized data
+import ProductCard from "../ProductCard/ProductCard.jsx"; // Corrected import path
+import { allProducts } from "../../Data/ProductsData.js"; // Import centralized data
 import "./ProductsPage.css"; // For ProductsPage specific styles
 
 function ProductsPage() {

@@ -1,9 +1,9 @@
 // src/pages/HomePage.jsx
 import React from "react";
-import HeroSection from "../../components/HeroSection/HeroSection"; // HeroSection is now a carousel
-import SocialLinks from "../../components/SocialLinks/SocialLinks";
-import FeaturedProducts from "../../components/FeatureProduct/FeaturedProducts";
-import CallToAction from "../../components/CallToAction/CallToAction";
+import HeroSection from "../../components/HeroSection/HeroSection.jsx"; // HeroSection is now a carousel
+import SocialLinks from "../../components/SocialLinks/SocialLinks.jsx";
+import FeaturedProducts from "../../components/FeatureProduct/FeaturedProducts.jsx";
+import CallToAction from "../../components/CallToAction/CallToAction.jsx";
 import "./HomePage.css"; // For HomePage specific styles
 
 function HomePage() {
