@@ -9,7 +9,7 @@ import CartPage from "./Pages/CartPage/CartPage.jsx";
 // import './utils/smoothScroll'
 import HomePage from "./Pages/HomePage/HomePage.jsx";
 import ProductsPage from "./Pages/ProductsPage/ProductsPage.jsx";
-import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
+import ProductDetailPage from "./Pages/ProductDetailPage/ProductDetailPage.jsx";
 
 import LoginPage from "./Pages/Authentication/LoginPage.jsx";
 import SignupPage from "./Pages/Authentication/SignupPage.jsx";
