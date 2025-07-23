@@ -13,7 +13,7 @@ import ProductDetailPage from "./Pages/ProductDetailPage/ProductDetailPage.jsx";
 
 import LoginPage from "./Pages/Authentication/LoginPage.jsx";
 import SignupPage from "./Pages/Authentication/SignupPage.jsx";
-import AboutPage from "./pages/AboutPage/AboutPage.jsx";
+import AboutPage from "./Pages/AboutPage/AboutPage.jsx";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import "./App.css"; // Ensure App.css is imported for global styles or App component specific styles
