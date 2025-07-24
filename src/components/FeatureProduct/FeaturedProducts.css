@@ -98,8 +98,8 @@
 
 /* Image becomes vibrant and slightly rotates on card hover */
 .Feature-product-card:hover img {
-  transform: scale(0.98) rotateZ(2deg); /* Slight zoom out and rotation */
-  filter: saturate(200%) brightness(130%); /* Ultra vibrant and brighter */
+  transform: scale(0.98) rotateZ(0deg); /* Slight zoom out and rotation */
+  filter: saturate(150%) brightness(100%) contrast(120%); /* Ultra vibrant and brighter */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   /* Removed animation: imageGlitch */
 }
@@ -187,5 +187,8 @@
   }
   .Feature-product-card p {
     font-size: 1em;
+  }
+  .Feature-product-card img{
+  filter: saturate(150%) brightness(100%) contrast(120%);
   }
 }
